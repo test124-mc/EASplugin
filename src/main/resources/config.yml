@@ -1,0 +1,49 @@
+# Default configuration for EASAnnouncer plugin
+
+messages:
+  # The header message displayed as the main title for EAS alerts.
+  # Supports MiniMessage formatting: https://docs.adventure.kyori.net/minimessage/format.html
+  header: "<red><bold>*** EMERGENCY ALERT SYSTEM ***</bold></red>"
+  # The footer message displayed as the subtitle for general EAS alerts.
+  # For earthquake/tsunami, the command message will be the subtitle.
+  footer: "<red><bold>*** THIS IS ONLY A TEST ***</bold></red>"
+
+sound:
+  # The general Minecraft sound to play during an EAS broadcast (e.g., from /easbroadcast).
+  # You can find a list of available sounds here:
+  # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+  # Examples: BLOCK_RESPAWN_ANCHOR_CHARGE, ENTITY_WITHER_SPAWN, ENTITY_ENDER_DRAGON_DEATH
+  name: "BLOCK_RESPAWN_ANCHOR_CHARGE"
+  # The volume of the sound (0.0 to 1.0, though higher values can be used to make it louder)
+  volume: 1.0
+  # The pitch of the sound (0.0 to 2.0). Lower values sound deeper/scarier.
+  pitch: 0.5
+
+earthquake:
+  # Duration of the screen shake effect in ticks (20 ticks = 1 second).
+  # This is a simulated screen shake by rapidly changing player's view.
+  shake_duration_ticks: 60 # 3 seconds
+  # Intensity of the screen shake (e.1 for subtle, 0.5 for intense).
+  shake_intensity: 0.2
+
+tsunami:
+  # Number of blue particles to spawn around each player for the tsunami effect.
+  # This replaces the "million Enderman death" effect for performance.
+  particle_count: 150
+  # The radius around the player within which particles will spread.
+  particle_spread_radius: 5.0
+  # RGB color values for the particles (0-255). Default is blue.
+  particle_color:
+    red: 0
+    green: 0
+    blue: 255
+  # The sound played during the tsunami particle effect (e.g., Enderman death sound).
+  sound: "ENTITY_ENDERMAN_DEATH"
+
+title_display:
+  # How long the title fades in (in ticks, 20 ticks = 1 second).
+  fade_in_ticks: 10 # 0.5 seconds
+  # How long the title stays fully visible (in ticks).
+  stay_ticks: 70 # 3.5 seconds
+  # How long the title fades out (in ticks).
+  fade_out_ticks: 20 # 1 second

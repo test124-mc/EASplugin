@@ -1,0 +1,47 @@
+# src/main/resources/plugin.yml
+main: io.github.test124_mc.easannouncer.EASAnnouncer
+name: EASAnnouncer
+version: 1.0 # Match your build.gradle version
+api-version: 1.21 # Updated for Minecraft 1.21.x
+author: test124-mc
+website: https://github.com/test124-mc/EASAnnouncerPlugin # Optional: Link to your plugin repo
+
+commands:
+  easbroadcast:
+    description: Broadcasts a general Emergency Alert System message.
+    usage: /easbroadcast <message>
+    aliases: [easc]
+    permission: easannouncer.broadcast
+    permission-message: You do not have permission to broadcast an EAS message.
+  easearthquake:
+    description: Triggers an earthquake EAS alert with screen shake.
+    usage: /easearthquake [message]
+    aliases: [easquake, quake]
+    permission: easannouncer.earthquake
+    permission-message: You do not have permission to trigger an earthquake alert.
+  eastsunami:
+    description: Triggers a tsunami EAS alert with Enderman deaths.
+    usage: /eastsunami [message]
+    aliases: [eastsun, tsunami]
+    permission: easannouncer.tsunami
+    permission-message: You do not have permission to trigger a tsunami alert.
+  easreload:
+    description: Reloads the EASAnnouncer plugin configuration.
+    usage: /easreload
+    aliases: [easrl]
+    permission: easannouncer.reload
+    permission-message: You do not have permission to reload the EASAnnouncer config.
+
+permissions:
+  easannouncer.broadcast:
+    description: Allows broadcasting a general Emergency Alert System message.
+    default: op
+  easannouncer.earthquake:
+    description: Allows triggering an earthquake EAS alert.
+    default: op
+  easannouncer.tsunami:
+    description: Allows triggering a tsunami EAS alert.
+    default: op
+  easannouncer.reload:
+    description: Allows reloading the EASAnnouncer plugin configuration.
+    default: op
